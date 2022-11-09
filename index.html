@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  
+  <title>Блог</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-container">
+        <a href="/" class="logo">Журнал</a>
+        <nav>
+          <ul>
+            <li><a href="/">Статьи</a></li>
+            <li><a href="/">Новости</a></li>
+            <li><a href="/">Лучшее</a></li>
+            <li><a href="/">О нас</a></li>
+          </ul>
+        </nav>
+        <address>
+          <ul>
+            <li>
+              <a href="https://vk.com/feed" target="_blank">
+                <img src="/assets/images/vk-logo.png" height="32px" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="https://web.telegram.org/" target="_blank">
+                <img src="/assets/images/telegram-logo.png" height="32px" alt="">
+              </a>
+            </li>
+          </ul>
+        </address>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="wrapper">
+      <main>
+        <div class="main-container">
+          <article>
+            <h1>Семантическая вёрстка.</h1>
+            <section>
+              <h2>Для чего нужна семантика и что это такое?</h2>
+              <p>
+                Семантика – это <strong>смысловое или логическое</strong> значение элементов. А зачем нужна вёрстка с указанием смысла блоков, если этого не замечает пользователь? Помимо пользователей веб-страницы просматривают поисковые роботы, которые могут оценивать полезность контента на сайте и его оригинальность, что влияет на выдачу страницы в поисковиках. Если пользователь, открыв страницу может сразу визуально понять, где находится важный контент, а где вспомогательный, то поисковые роботы этого делать не умеют. 
+              </p>
+              <img src="/assets/images/article/image1.png" alt="Для чего нужна семантическая вёрстка?">
+              <p>
+                Менее очевидной причиной, почему семантическая вёрстка необходима, также является «Доступный WEB». Существуют специальные приложения-скринридеры, которые помогают слабовидящим людям пользоваться веб-страницами.
+              </p>
+              <figure>
+                <img src="/assets/images/article/image2.jpg" alt="Приложение-скринридер для слабовидящих">
+                <figcaption>Источник:
+                  <a href="https://news.microsoft.com/ru-ru/prilozhenie-microsoft-seeing-ai-stanet-umnym-povodyrem/">https://news.microsoft.com/ru-ru/prilozhenie-microsoft-seeing-ai-stanet-umnym-povodyrem/</a>
+                </figcaption>
+              </figure>
+              <p>
+                Вы могли не знать, но слабовидящие люди пользуются смартфонами, и, например, iPhone позволяет пользоваться всеми необходимыми функциями, при этом не отображая какого-либо графического интерфейса.  Таким приложениям очень важна семантика, чтобы они могли правильно функционировать и помогать нуждающимся людям. К этой же категории можно отнести различные упрощенные режимы чтения в браузерах. 
+              </p>
+              <img src="/assets/images/article/image3.png" alt="Режим чтения в веб-браузере">
+            </section>
+            <section>
+              <div class="content-nav">
+                <span>Теперь разберем основные семантические html-элементы:</span>
+                <ol>
+                  <li><a href="#main-tag">Main</a></li>
+                  <li><a href="#aside-tag">Aside</a></li>
+                  <li><a href="#section-tag">Section</a></li>
+                  <li><a href="#article-tag">Article</a></li>
+                  <li><a href="#strong-tag">Strong</a></li>
+                </ol>
+              </div>
+            </section>
+            <section id="main-tag">
+              <h3>Main</h3>
+              <p>
+                Main – блок с <strong>главной информацией</strong> на странице. Этим блоком нужно оборачивать основной тематический и уникальный контент на странице. Контент как раз из этого блока попадает в упомянутые ранее режимы для чтения. Что не должно входить в этот блок: header и footer, меню и навигация, дополнительные блоки и т.д.. Данный элемент должен быть на странице один и содержать контент, который больше нигде на сайте не повторяется.
+              </p>
+              <pre><code class="language-html">
+                &lt;main&gt;&lt;/main&gt;
+              </code></pre>
+            </section>
+            <section id="aside-tag">
+              <h3>Aside</h3>
+              <p>
+                В противовес Main существует Aside. Именно в этом блоке лучше располагать навигацию, элементы интерфейса, формы поиска, дополнительную информацию. Грубо говоря, ваш body <strong>должен содержать</strong> header, footer, main и один или несколько aside. Это классическая структура разметки.
+              </p>
+              <pre><code class="language-html">
+                &lt;body&gt;
+                        &lt;header&gt;&lt;/header&gt;
+                        &lt;aside&gt;&lt;/aside&gt;
+                        &lt;main&gt;&lt;/main&gt;
+                        &lt;aside&gt;&lt;/aside&gt;
+                        &lt;footer&gt;&lt;/footer&gt;
+                &lt;/body&gt;                
+              </code></pre>
+            </section>
+            <section id="section-tag">
+              <h3>Section</h3>
+              <p>
+                Section – этот тег означает логический блок на сайте. Например, в лендинге были отделены гарантии, команда, услуги, отзывы.
+              </p>
+              <pre><code class="language-html">
+                &lt;section class="types" id="types"&gt;…&lt;/section&gt;
+                &lt;section class="garant" id="garant"&gt;…&lt;/section&gt;
+                &lt;section class="team" id="team"&gt;…&lt;/section&gt;
+                &lt;section class="clients" id="clients"&gt;…&lt;/section&gt;
+              </code></pre>
+            </section>
+            <section id="article-tag">
+              <h3>Article</h3>
+              <p>
+                Article – тег, в который оборачивают различные самостоятельные законченные единицы контента.  Частые случаи применения: карточка товара, статья, комментарий.
+              </p>
+              <pre><code class="language-html">
+                &lt;article class="forecast"&gt;
+                  &lt;h1&gt;Погода в Воронеже&lt;/h1&gt;
+                  &lt;article class="day-forecast"&gt;
+                      &lt;h2&gt;Понедельник&lt;/h2&gt;
+                      &lt;p&gt;Дождь.&lt;/p&gt;
+                  &lt;/article&gt;
+                  &lt;article class="day-forecast"&gt;
+                      &lt;h2&gt;Вторник&lt;/h2&gt;
+                      &lt;p&gt;Временами дождь.&lt;/p&gt;
+                  &lt;/article&gt;
+                &lt;/article&gt;                
+              </code></pre>
+            </section>
+            <section id="strong-tag">
+              <h3>Strong</h3>
+              <p>
+                Этим тегом обычно выделяют высокую важность фразе или слову в тексте. По умолчанию текст становится жирным. В отличие от простого b (делает текст жирным) является семантическим.
+              </p>
+              <pre><code class="language-html">
+                &lt;h1 class="hero__title"&gt;
+                      Оперативно решаем ваши &lt;strong&gt;правовые вопросы
+                &lt;/strong&gt;&lt;/h1&gt;
+              </code></pre>
+            </section>
+            <hr>
+            <p>
+              Также семантическими тегами можно назвать header, footer, nav, которые мы изучили на прошлом уроке.  
+            </p>
+            <section>
+              <h2>Вывод.</h2>
+              <p>
+                Небольшой подытог. Семантика делает упор на смысловое предназначение каждого блока и логическую структуру документа.  Следовать этому подходу очень желательно, хотя бы придерживаясь основ. Проще говоря, используем теги по их назначению.
+              </p>
+            </section>
+          </article>
+        </div>
+      </main>
+      <aside>
+        <div class="sidebar">
+          <ul>
+            <li><a href="/">Досуг</a></li>
+            <li><a href="/">Спорт</a></li>
+            <li><a href="/">Наука</a></li>
+            <li><a href="/">Экология</a></li>
+            <li><a href="/">Добрые дела</a></li>
+            <li><a href="/">Для дома</a></li>
+            <li><a href="/">ЗОЖ</a></li>
+            <li><a href="/">Рецепты</a></li>
+            <li><a href="/">Бизнес</a></li>
+            <li><a href="/">Программирование</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <a href="/" class="logo">Журнал</a>
+        <p>Еженедельное новостное издание о самом главном.</p>
+      </div>
+      <div class="footer-column">
+        <address>
+          <ul>
+            <li>
+              <a href="https://vk.com/feed" target="_blank">
+                <img src="/assets/images/vk-logo.png" height="32px" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="https://web.telegram.org/" target="_blank">
+                <img src="/assets/images/telegram-logo.png" height="32px" alt="">
+              </a>
+            </li>
+          </ul>
+        </address>
+      </div>
+      <div class="footer-column">
+        <p class="footer__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit enim, saepe aliquam maiores recusandae quaerat? Nisi incidunt exercitationem animi iste sapiente laborum quia voluptatem alias, sunt dicta repudiandae consectetur? Ab quas ex atque fuga tempora.</p>
+      </div>
+      <div class="footer-column">
+        <nav>
+          <ul>
+            <li><a href="/">Статьи</a></li>
+            <li><a href="/">Новости</a></li>
+            <li><a href="/">Лучшее</a></li>
+            <li><a href="/">О нас</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
